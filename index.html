@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Закупка и консолидация промышленных запчастей (MRO) из Европы. Procurement, consolidation, logistics, compliance." />
+  <title>Закупка и консолидация промышленных запчастей (MRO) из Европы</title>
+  <style>
+    :root{
+      --bg:#0b0f12;
+      --card:#0f151a;
+      --text:#e7eef5;
+      --muted:#a7b6c5;
+      --line:#1b2630;
+      --accent:#0aa37f; /* “нефрит” */
+      --accent2:#15c39a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(900px 600px at 10% 0%, rgba(10,163,127,.16), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(21,195,154,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px;}
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,18,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .logo{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.4px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:4px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 0 0 4px rgba(10,163,127,.14);
+    }
+    .menu{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .menu a{
+      font-size:14px; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+      border:1px solid transparent;
+    }
+    .menu a:hover{color:var(--text); border-color:rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid rgba(10,163,127,.45);
+      background: rgba(10,163,127,.12);
+      color:var(--text);
+      font-weight:600;
+      box-shadow: none;
+      cursor:pointer;
+    }
+    .btn:hover{background: rgba(10,163,127,.18)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(10,163,127,.95), rgba(21,195,154,.90));
+      border:1px solid rgba(255,255,255,.10);
+      color:#08110f;
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .hero{
+      padding:54px 0 22px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:42px;
+      line-height:1.12;
+      letter-spacing:-.6px;
+    }
+    .lead{color:var(--muted); font-size:16px; max-width:66ch; margin:0 0 18px}
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 22px}
+    .pill{
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .card{
+      background: rgba(15,21,26,.72);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:18px}
+    .hero-card h3{margin:0 0 8px; font-size:16px}
+    .hero-card p{margin:0 0 14px; color:var(--muted); font-size:14px}
+    .mini{
+      display:grid; gap:10px;
+    }
+    .mini .row{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+    }
+    .ico{
+      width:34px; height:34px; border-radius:12px;
+      background: rgba(10,163,127,.14);
+      border:1px solid rgba(10,163,127,.30);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--accent2);
+      font-weight:800;
+      flex:0 0 auto;
+    }
+    .row b{display:block; font-size:14px; margin-bottom:2px}
+    .row span{display:block; font-size:13px; color:var(--muted)}
+    .cta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    section{padding:34px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:10px; flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    h2{margin:0; font-size:24px; letter-spacing:-.3px}
+    .hint{color:var(--muted); font-size:14px; margin:0}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+    .box{padding:16px}
+    .box h3{margin:0 0 8px; font-size:16px}
+    .box p{margin:0; color:var(--muted); font-size:14px}
+    .list{
+      margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); font-size:14px;
+    }
+    .steps{counter-reset: step}
+    .step{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px; border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+    }
+    .badge{
+      width:32px; height:32px; border-radius:12px;
+      background: rgba(10,163,127,.14);
+      border:1px solid rgba(10,163,127,.30);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--accent2);
+      font-weight:800;
+      flex:0 0 auto;
+    }
+    .step b{display:block; margin:0 0 2px}
+    .step span{color:var(--muted); font-size:14px}
+    .form{
+      display:grid; gap:10px;
+    }
+    label{font-size:13px; color:var(--muted)}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+      font-family:var(--font);
+      font-size:14px;
+    }
+    textarea{min-height:110px; resize:vertical}
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(21,195,154,.55);
+      box-shadow: 0 0 0 4px rgba(10,163,127,.12);
+    }
+    .foot{
+      padding:22px 0 36px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12.5px;
+    }
+    .foot-grid{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+      align-items:start;
+    }
+    .smalllinks{display:flex; gap:10px; flex-wrap:wrap}
+    .smalllinks a{color:var(--muted); border-bottom:1px dashed rgba(255,255,255,.18)}
+    .smalllinks a:hover{color:var(--text)}
+    .notice{
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      font-size:12.5px;
+      color:var(--muted);
+    }
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr}
+      h1{font-size:34px}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .foot-grid{grid-template-columns:1fr}
+      .menu{display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="logo">
+          <span class="dot"></span>
+          <span>Industrial Procurement (EU)</span>
+        </div>
+        <nav class="menu" aria-label="Навигация">
+          <a href="#services">Услуги</a>
+          <a href="#process">Как работаем</a>
+          <a href="#sectors">Направления</a>
+          <a href="#compliance">Комплаенс</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a class="btn primary" href="#contacts">Запросить предложение</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="card box">
+          <h1>Закупка и консолидация промышленных запчастей (MRO) из Европы</h1>
+          <p class="lead">
+            Независимая компания по организации закупок: мультибрендовый sourcing по запросу, консолидация в ЕС и международная доставка
+            с соблюдением требований комплаенса.
+          </p>
+
+          <div class="pillrow">
+            <span class="pill">Procurement / Sourcing</span>
+            <span class="pill">EU Consolidation Hub</span>
+            <span class="pill">Export Documents</span>
+            <span class="pill">End-user Verification</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#contacts">Отправить список запчастей</a>
+            <a class="btn" href="#process">Посмотреть процесс</a>
+          </div>
+        </div>
+
+        <aside class="card hero-card">
+          <h3>Что мы делаем</h3>
+          <p>Мы не интернет-магазин и не витрина брендов. Работаем по запросу клиентов и сопровождаем цепочку поставки.</p>
+          <div class="mini">
+            <div class="row">
+              <div class="ico">1</div>
+              <div>
+                <b>Закупка по артикулам</b>
+                <span>Вы присылаете список — мы проверяем применимость и доступность у поставщиков в ЕС.</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="ico">2</div>
+              <div>
+                <b>Консолидация</b>
+                <span>Объединяем поставки от разных поставщиков в одну отправку.</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="ico">3</div>
+              <div>
+                <b>Документы и комплаенс</b>
+                <span>Экспортная документация, проверка конечного пользователя, контроль ограничений.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Услуги</h2>
+          <p class="hint">Сервисная модель: закупка по запросу, без розничного каталога и витрины брендов.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card box">
+            <h3>Закупка промышленных запчастей</h3>
+            <p>По артикулам, спецификациям или описанию. По запросу — подбор замен и альтернатив.</p>
+            <ul class="list">
+              <li>проверка применимости</li>
+              <li>проверка доступности в ЕС</li>
+              <li>согласование сроков и условий</li>
+            </ul>
+          </div>
+
+          <div class="card box">
+            <h3>Консолидация в ЕС</h3>
+            <p>Собираем многопозиционные заказы от разных поставщиков и объединяем в одну отправку.</p>
+            <ul class="list">
+              <li>приёмка от поставщиков</li>
+              <li>упаковка и маркировка</li>
+              <li>оптимизация логистики</li>
+            </ul>
+          </div>
+
+          <div class="card box">
+            <h3>Документация и сопровождение</h3>
+            <p>Поддержка от заявки до отправки: документы, контроль ограничений, отслеживание.</p>
+            <ul class="list">
+              <li>экспортные документы</li>
+              <li>серийные номера по запросу</li>
+              <li>сопровождение отгрузки</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Как мы работаем</h2>
+          <p class="hint">Прозрачный процесс закупки и поставки.</p>
+        </div>
+
+        <div class="grid2 steps">
+          <div class="step">
+            <div class="badge">1</div>
+            <div>
+              <b>Вы отправляете список</b>
+              <span>Артикулы / спецификации / фото шильдика. Чем точнее данные — тем быстрее ответ.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="badge">2</div>
+            <div>
+              <b>Проверяем применимость и доступность</b>
+              <span>Уточняем параметры, при необходимости предлагаем альтернативы.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="badge">3</div>
+            <div>
+              <b>Закупка у поставщиков в ЕС</b>
+              <span>Организуем закупку по согласованным условиям и срокам.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="badge">4</div>
+            <div>
+              <b>Консолидация на складе</b>
+              <span>Объединяем позиции, готовим к отправке, маркируем и упаковываем.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="badge">5</div>
+            <div>
+              <b>Экспорт и доставка</b>
+              <span>Документы, контроль ограничений, международная доставка и отслеживание.</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="badge">6</div>
+            <div>
+              <b>Поддержка после отгрузки</b>
+              <span>Коммуникация по статусу, документы, подтверждения по запросу.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sectors">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Направления</h2>
+          <p class="hint">Типовые категории MRO. Поставки выполняются по запросу клиента.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card box">
+            <h3>Категории запчастей</h3>
+            <ul class="list">
+              <li>Гидравлика</li>
+              <li>Пневматика</li>
+              <li>Электрика и электрокомпоненты</li>
+              <li>Промышленная автоматика</li>
+              <li>Датчики и измерительное оборудование</li>
+              <li>Клапаны, арматура, фитинги</li>
+            </ul>
+          </div>
+
+          <div class="card box">
+            <h3>Кому особенно полезно</h3>
+            <ul class="list">
+              <li>Сервисным и ремонтным компаниям</li>
+              <li>Отделам техобслуживания (MRO)</li>
+              <li>Промышленным предприятиям</li>
+              <li>EPC-подрядчикам и интеграторам</li>
+              <li>Судоходству / офшор / энергетике</li>
+              <li>Добыче, металлургии, химии</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compliance">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Комплаенс и ответственная торговля</h2>
+          <p class="hint">Снижаем риски в цепочке поставок и соблюдаем требования регулирования.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="card box">
+            <h3>Экспортный контроль</h3>
+            <p>Проверка ограничений и требований экспортного контроля в рамках применимого законодательства.</p>
+          </div>
+          <div class="card box">
+            <h3>Санкционное регулирование</h3>
+            <p>Проверка контрагентов и конечного пользователя в пределах необходимых процедур.</p>
+          </div>
+          <div class="card box">
+            <h3>Цепочка поставок</h3>
+            <p>Документы и подтверждения по запросу, серийные номера и проверка соответствия (где применимо).</p>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:14px;">
+          Компания является независимым поставщиком услуг по закупке и консолидации промышленных запчастей. Сайт не является розничным каталогом.
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Контакты и запрос предложения</h2>
+          <p class="hint">Отправьте список позиций или опишите задачу — вернёмся с доступностью и сроками.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card box">
+            <h3>Что прислать, чтобы мы ответили быстро</h3>
+            <ul class="list">
+              <li>артикулы / part numbers</li>
+              <li>количество</li>
+              <li>страна назначения</li>
+              <li>желаемый срок</li>
+              <li>фото шильдика (если есть)</li>
+            </ul>
+            <p class="hint" style="margin-top:12px;">
+              Если у тебя будет корпоративный email и телефон — вставишь здесь.
+            </p>
+          </div>
+
+          <div class="card box">
+            <h3>Форма запроса</h3>
+            <form class="form" method="post" action="#">
+              <!-- Подключение: вставь сюда endpoint Formspree / backend URL -->
+              <div>
+                <label for="company">Компания</label>
+                <input id="company" name="company" placeholder="Название компании" />
+              </div>
+              <div>
+                <label for="name">Контактное лицо</label>
+                <input id="name" name="name" placeholder="Имя и должность" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="name@company.com" required />
+              </div>
+              <div>
+                <label for="country">Страна</label>
+                <input id="country" name="country" placeholder="Страна назначения" />
+              </div>
+              <div>
+                <label for="msg">Список запчастей / сообщение</label>
+                <textarea id="msg" name="message" placeholder="Вставьте список позиций, артикулы, количество, комментарии" required></textarea>
+              </div>
+              <button class="btn primary" type="submit">Отправить запрос</button>
+              <p class="hint" style="margin:10px 0 0;">
+                Для рабочей отправки формы подключи Formspree / Make / Zapier / свой backend.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="logo" style="margin-bottom:10px;">
+            <span class="dot"></span>
+            <span>Industrial Procurement (EU)</span>
+          </div>
+          <div class="smalllinks">
+            <a href="#services">Услуги</a>
+            <a href="#process">Процесс</a>
+            <a href="#compliance">Комплаенс</a>
+            <a href="#contacts">Контакты</a>
+          </div>
+        </div>
+        <div class="notice">
+          Все товарные знаки и наименования производителей являются собственностью соответствующих правообладателей и используются исключительно в справочных целях.
+          Компания является независимым поставщиком услуг по закупке и консолидации промышленных запчастей и не является официальным дистрибьютором или дилером производителей,
+          если прямо не указано иное.
+        </div>
+      </div>
+
+      <p style="margin:14px 0 0;">
+        © <span id="y"></span> Industrial Procurement (EU). All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
