@@ -8,7 +8,6 @@
 
   <style>
     :root{
-      /* Enterprise-corporate light style */
       --bg:#ffffff;
       --surface:#ffffff;
       --surface-2:#f6f8fb;
@@ -16,7 +15,6 @@
       --muted:#52627a;
       --line:#e6ebf2;
 
-      /* Corporate teal/green vibe (own branding) */
       --accent:#00a6a6;
       --accent-2:#0aa37f;
       --accent-soft: rgba(0,166,166,.12);
@@ -130,7 +128,6 @@
       color: var(--text);
     }
 
-    /* Sections */
     section{ padding: 54px 0; }
     .hero{ padding: 44px 0 20px; }
 
@@ -274,7 +271,7 @@
 
     /* Form */
     label{display:block; font-size:13px; color: var(--muted); margin: 0 0 6px;}
-    input, textarea, select{
+    input, textarea{
       width:100%;
       padding: 12px 12px;
       border-radius: 14px;
@@ -286,7 +283,7 @@
       font-size: 14px;
     }
     textarea{min-height:120px; resize:vertical}
-    input:focus, textarea:focus, select:focus{
+    input:focus, textarea:focus{
       border-color: rgba(0,166,166,.45);
       box-shadow: 0 0 0 4px rgba(0,166,166,.10);
     }
@@ -298,6 +295,25 @@
       background: rgba(246,248,251,.70);
       color: var(--muted);
       font-size: 12.8px;
+    }
+
+    /* Bereiche image card */
+    .figure-card{
+      padding: 18px;
+      overflow:hidden;
+    }
+    .figure-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .figure-caption{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13.5px;
     }
 
     footer{
@@ -322,7 +338,6 @@
     .contact-card a{ color: var(--text); border-bottom: 1px dashed rgba(11,18,32,.25); }
     .contact-card a:hover{ border-bottom-color: rgba(11,18,32,.45); }
 
-    /* Mobile */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns: 1fr;}
       h1{font-size: 36px;}
@@ -532,35 +547,21 @@
       </div>
     </section>
 
+    <!-- BEREICHE (mit Bild wie im Beispiel) -->
     <section id="sectors">
       <div class="wrap">
         <div class="section-head">
           <h2>Bereiche</h2>
-          <p class="hint">Typische MRO-Kategorien. Lieferung erfolgt auf Kundenanfrage.</p>
+          <p class="hint">
+            Fachgebiete, für die wir Equipment und Ersatzteile im Rahmen unserer Beschaffungs- und Konsolidierungsdienstleistungen liefern.
+          </p>
         </div>
 
-        <div class="grid2">
-          <div class="card pad feature">
-            <h3>Kategorien</h3>
-            <ul class="list">
-              <li>Hydraulik</li>
-              <li>Pneumatik</li>
-              <li>Elektrotechnik & Komponenten</li>
-              <li>Industrieautomation</li>
-              <li>Sensorik & Messtechnik</li>
-              <li>Ventile, Armaturen, Fittings</li>
-            </ul>
-          </div>
-
-          <div class="card pad feature">
-            <h3>Typische Kunden</h3>
-            <ul class="list">
-              <li>Service- und Reparaturunternehmen</li>
-              <li>Instandhaltung (MRO) in Industrieanlagen</li>
-              <li>EPC & Systemintegratoren</li>
-              <li>Energie, Produktion, Rohstoffe</li>
-              <li>Marine / Offshore</li>
-            </ul>
+        <div class="card figure-card">
+          <!-- Lade die generierte Grafik in dein Repo: /assets/bereiche.png -->
+          <img src="assets/bereiche.png" alt="Fachgebiete – Equipment und Ersatzteile" />
+          <div class="figure-caption">
+            Hinweis: Lieferung erfolgt auf Anfrage (Artikelnummern / Spezifikationen). Kein Retail-Katalog.
           </div>
         </div>
       </div>
@@ -610,10 +611,6 @@
             <p>E-Mail: <a href="mailto:support@e-comstock.de">support@e-comstock.de</a></p>
             <p style="margin-top:12px;"><b>USt-ID-Nr. / VAT</b>: DE283788999</p>
             <p><b>Registernummer</b>: HRB 141947 B</p>
-
-            <div class="notice" style="margin-top:14px;">
-              Tipp: Für eine schnelle Bearbeitung bitte Artikelnummern, Mengen, Zielland und gewünschte Lieferzeit angeben.
-            </div>
           </div>
 
           <div class="card pad feature">
@@ -621,11 +618,10 @@
 
             <!-- GitHub Pages has no server-side mail. This uses FormSubmit to send to your mailbox. -->
             <form method="post" action="https://formsubmit.co/support@e-comstock.de">
-              <!-- FormSubmit settings -->
               <input type="hidden" name="_subject" value="Neue Anfrage über e-comstock.de" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-              <!-- Optional: after submit redirect (change to your real domain when ready) -->
+              <!-- Wenn du später die eigene Domain hast: _next auf deine Domain ändern -->
               <input type="hidden" name="_next" value="https://e-comstock.github.io/site/#contacts" />
 
               <div style="display:grid; gap:10px;">
@@ -653,6 +649,7 @@
                 <button class="btn primary" type="submit">Anfrage absenden</button>
               </div>
             </form>
+
           </div>
         </div>
 
@@ -673,6 +670,7 @@
           <div class="smalllinks">
             <a href="#services">Leistungen</a>
             <a href="#process">Ablauf</a>
+            <a href="#sectors">Bereiche</a>
             <a href="#compliance">Compliance</a>
             <a href="#contacts">Kontakt</a>
           </div>
