@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="ru">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="EcomStock — закупка и консолидация промышленных запчастей (MRO) из Европы. Procurement, consolidation, logistics, compliance." />
-  <title>EcomStock — Industrial Procurement & EU Consolidation (MRO)</title>
+  <meta name="description" content="EcomStock GmbH — Beschaffung und Konsolidierung von Industrie-Ersatzteilen (MRO) aus Europa. Procurement, Konsolidierung, Logistik, Compliance." />
+  <title>EcomStock GmbH — Industrial Procurement & EU-Konsolidierung (MRO)</title>
 
   <style>
     :root{
-      /* “Enterprise-corporate” light style */
+      /* Enterprise-corporate light style */
       --bg:#ffffff;
       --surface:#ffffff;
       --surface-2:#f6f8fb;
@@ -16,9 +16,9 @@
       --muted:#52627a;
       --line:#e6ebf2;
 
-      /* Siemens-like vibe (teal/green) but NOT their branding */
-      --accent:#00a6a6;     /* corporate teal */
-      --accent-2:#0aa37f;   /* secondary green-teal */
+      /* Corporate teal/green vibe (own branding) */
+      --accent:#00a6a6;
+      --accent-2:#0aa37f;
       --accent-soft: rgba(0,166,166,.12);
 
       --shadow: 0 16px 40px rgba(17, 24, 39, .10);
@@ -59,7 +59,7 @@
     }
     .brand{
       display:flex; align-items:center; gap:12px;
-      min-width: 220px;
+      min-width: 240px;
     }
     .brand .word{
       display:flex; flex-direction:column; line-height:1.05;
@@ -91,7 +91,7 @@
     .nav-cta{
       display:flex; align-items:center; gap:10px;
       justify-content:flex-end;
-      min-width: 220px;
+      min-width: 240px;
     }
 
     .btn{
@@ -163,7 +163,7 @@
       margin: 0 0 18px;
       color: var(--muted);
       font-size: 16px;
-      max-width: 70ch;
+      max-width: 74ch;
     }
 
     .kpis{
@@ -227,7 +227,7 @@
       margin:0;
       color: var(--muted);
       font-size: 14px;
-      max-width: 70ch;
+      max-width: 74ch;
     }
 
     .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
@@ -317,6 +317,11 @@
     }
     .smalllinks a:hover{color: var(--text); border-bottom-color: rgba(11,18,32,.35);}
 
+    .contact-card p{ margin: 6px 0; color: var(--muted); font-size: 14px; }
+    .contact-card b{ color: var(--text); }
+    .contact-card a{ color: var(--text); border-bottom: 1px dashed rgba(11,18,32,.25); }
+    .contact-card a:hover{ border-bottom-color: rgba(11,18,32,.45); }
+
     /* Mobile */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns: 1fr;}
@@ -334,14 +339,12 @@
 
 <body>
 
-  <!-- Top navigation -->
   <div class="topbar">
     <div class="wrap">
       <div class="nav">
 
-        <!-- LOGO: inline SVG (vector) -->
         <a class="brand" href="#top" aria-label="EcomStock">
-          <svg width="44" height="44" viewBox="0 0 44 44" role="img" aria-label="EcomStock logo">
+          <svg width="44" height="44" viewBox="0 0 44 44" role="img" aria-label="EcomStock Logo">
             <defs>
               <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="#00a6a6"/>
@@ -349,96 +352,90 @@
               </linearGradient>
             </defs>
             <rect x="4" y="4" width="36" height="36" rx="10" fill="url(#g)"/>
-            <!-- “E” monogram -->
             <path d="M16 15h14v3H19v3h10v3H19v3h11v3H16V15z" fill="#041313" opacity=".96"/>
           </svg>
 
           <div class="word">
             <b>EcomStock</b>
-            <span>Industrial Procurement • EU Consolidation</span>
+            <span>Industrial Procurement • EU-Konsolidierung</span>
           </div>
         </a>
 
-        <nav class="menu" aria-label="Навигация">
-          <a href="#services">Услуги</a>
-          <a href="#process">Процесс</a>
-          <a href="#sectors">Направления</a>
-          <a href="#compliance">Комплаенс</a>
-          <a href="#contacts">Контакты</a>
+        <nav class="menu" aria-label="Navigation">
+          <a href="#services">Leistungen</a>
+          <a href="#process">Ablauf</a>
+          <a href="#sectors">Bereiche</a>
+          <a href="#compliance">Compliance</a>
+          <a href="#contacts">Kontakt</a>
         </nav>
 
         <div class="nav-cta">
-          <a class="btn ghost" href="#contacts">Отправить список</a>
-          <a class="btn primary" href="#contacts">Запросить предложение</a>
+          <a class="btn ghost" href="#contacts">Anfrage senden</a>
+          <a class="btn primary" href="#contacts">Angebot anfordern</a>
         </div>
 
       </div>
     </div>
   </div>
 
-  <!-- Hero -->
   <header class="hero" id="top">
     <div class="wrap">
       <div class="hero-grid">
 
         <div class="card pad">
-          <h1>Закупка и консолидация промышленных запчастей (MRO) из Европы</h1>
+          <h1>Beschaffung und Konsolidierung von Industrie-Ersatzteilen (MRO) aus Europa</h1>
           <p class="lead">
-            Мы работаем как независимый procurement-партнёр: sourcing по артикулам и спецификациям,
-            консолидация поставок в ЕС и международная доставка с соблюдением требований комплаенса.
+            Wir agieren als unabhängiger Procurement-Partner: Sourcing nach Artikelnummern und Spezifikationen,
+            EU-Konsolidierung sowie internationale Lieferung unter Berücksichtigung von Compliance-Anforderungen.
           </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#contacts">Отправить список запчастей</a>
-            <a class="btn" href="#process">Посмотреть процесс</a>
+            <a class="btn primary" href="#contacts">Ersatzteilliste senden</a>
+            <a class="btn" href="#process">Ablauf ansehen</a>
           </div>
 
-          <div class="kpis" aria-label="Ключевые преимущества">
+          <div class="kpis" aria-label="Vorteile">
             <div class="kpi">
-              <b>Мультибрендовая закупка</b>
-              <span>По запросу клиента, без розничного каталога.</span>
+              <b>Multi-Brand Procurement</b>
+              <span>Beschaffung auf Anfrage — kein Retail-Katalog.</span>
             </div>
             <div class="kpi">
-              <b>EU консолидация</b>
-              <span>Одна отправка вместо множества поставок.</span>
+              <b>EU-Konsolidierung</b>
+              <span>Eine Sendung statt vieler Einzelpakete.</span>
             </div>
             <div class="kpi">
-              <b>Комплаенс</b>
-              <span>Экспортный контроль и проверка конечного пользователя.</span>
+              <b>Compliance</b>
+              <span>Exportkontrolle & End-User-Prüfung.</span>
             </div>
           </div>
         </div>
 
         <aside class="card pad hero-aside soft">
-          <h3>Что важно понимать</h3>
-          <p>Сайт отражает сервисную модель: закупка и сопровождение поставок по запросам клиентов.</p>
+          <h3>Wichtig zu wissen</h3>
+          <p>Diese Website beschreibt unser Service-Modell: Beschaffung und Supply-Chain-Begleitung auf Kundenanfrage.</p>
 
           <div class="check">
             <div class="dot"></div>
             <div>
-              <b>Не интернет-магазин</b>
-              <span>Мы не публикуем розничный ассортимент и цены.</span>
+              <b>Kein Online-Shop</b>
+              <span>Wir veröffentlichen keinen Retail-Produktkatalog und keine Preise.</span>
             </div>
           </div>
 
           <div class="check">
             <div class="dot"></div>
             <div>
-              <b>Консолидация поставок</b>
-              <span>Объединяем позиции от разных поставщиков в ЕС.</span>
+              <b>Konsolidierung</b>
+              <span>Wir bündeln Lieferungen verschiedener EU-Lieferanten in einer Sendung.</span>
             </div>
           </div>
 
           <div class="check">
             <div class="dot"></div>
             <div>
-              <b>Документация</b>
-              <span>Экспортные документы и сопровождение поставки.</span>
+              <b>Dokumentation</b>
+              <span>Exportdokumente und Sendungsbegleitung — falls erforderlich.</span>
             </div>
-          </div>
-
-          <div class="notice">
-            Если нужно — добавим английскую/немецкую версии и корпоративный домен.
           </div>
         </aside>
 
@@ -448,54 +445,52 @@
 
   <main>
 
-    <!-- Services -->
     <section id="services">
       <div class="wrap">
         <div class="section-head">
-          <h2>Услуги</h2>
-          <p class="hint">Чёткая B2B-модель: procurement + консолидация + логистика + комплаенс.</p>
+          <h2>Leistungen</h2>
+          <p class="hint">B2B-Modell: Procurement + Konsolidierung + Logistik + Compliance.</p>
         </div>
 
         <div class="grid3">
           <div class="card pad feature">
-            <h3>Закупка запчастей по запросу</h3>
-            <p>Работаем по артикулам, спецификациям и техописанию. По запросу — альтернативы и замены.</p>
+            <h3>Beschaffung auf Anfrage</h3>
+            <p>Sourcing nach Artikelnummern, Spezifikationen oder technischer Beschreibung. Alternativen auf Wunsch.</p>
             <ul class="list">
-              <li>проверка применимости</li>
-              <li>проверка доступности в ЕС</li>
-              <li>согласование сроков</li>
+              <li>Prüfung der Spezifikation/Anwendbarkeit</li>
+              <li>Verfügbarkeitsabfrage in der EU</li>
+              <li>Abstimmung von Lieferzeit & Konditionen</li>
             </ul>
           </div>
 
           <div class="card pad feature">
-            <h3>Консолидация в ЕС</h3>
-            <p>Собираем многопозиционные заказы у разных поставщиков и объединяем в одну отправку.</p>
+            <h3>EU-Konsolidierung</h3>
+            <p>Wir sammeln Positionen verschiedener Lieferanten und bündeln sie zu einer Sendung.</p>
             <ul class="list">
-              <li>приёмка и консолидация</li>
-              <li>упаковка и маркировка</li>
-              <li>оптимизация логистики</li>
+              <li>Wareneingang & Bündelung</li>
+              <li>Verpackung & Kennzeichnung</li>
+              <li>Optimierung der Versandkosten</li>
             </ul>
           </div>
 
           <div class="card pad feature">
-            <h3>Документы и сопровождение</h3>
-            <p>Экспортные документы, поддержка по статусу, подтверждения и контроль ограничений.</p>
+            <h3>Dokumente & Versandbegleitung</h3>
+            <p>Exportdokumente, Status-Updates, Nachweise und Restriktionsprüfung — soweit erforderlich.</p>
             <ul class="list">
-              <li>экспортное оформление</li>
-              <li>серийные номера по запросу</li>
-              <li>поддержка после отгрузки</li>
+              <li>Exportdokumentation</li>
+              <li>Seriennummern auf Wunsch</li>
+              <li>Unterstützung nach Versand</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Process -->
     <section id="process">
       <div class="wrap">
         <div class="section-head">
-          <h2>Как мы работаем</h2>
-          <p class="hint">Прозрачный процесс закупки и поставки — без витрины брендов и “магазинной” логики.</p>
+          <h2>Ablauf</h2>
+          <p class="hint">Transparenter Prozess — ohne “Shop-Logik”.</p>
         </div>
 
         <div class="grid2">
@@ -503,15 +498,15 @@
             <div class="steps">
               <div class="step">
                 <div class="badge">1</div>
-                <div><b>Вы отправляете список</b><span>Артикулы/спеки/фото шильдика, количество, страна назначения, сроки.</span></div>
+                <div><b>Sie senden Ihre Liste</b><span>Artikelnummern/Spezifikationen, Menge, Zielland, gewünschte Lieferzeit.</span></div>
               </div>
               <div class="step">
                 <div class="badge">2</div>
-                <div><b>Проверяем применимость</b><span>Уточняем параметры, при необходимости предлагаем альтернативы.</span></div>
+                <div><b>Prüfung & Verfügbarkeit</b><span>Wir prüfen Anwendbarkeit, klären Details und Optionen.</span></div>
               </div>
               <div class="step">
                 <div class="badge">3</div>
-                <div><b>Организуем закупку в ЕС</b><span>Согласуем условия и сроки, закупаем у поставщиков и складов.</span></div>
+                <div><b>Beschaffung in der EU</b><span>Wir organisieren die Beschaffung bei EU-Lieferanten und Lagerbeständen.</span></div>
               </div>
             </div>
           </div>
@@ -520,15 +515,15 @@
             <div class="steps">
               <div class="step">
                 <div class="badge">4</div>
-                <div><b>Консолидация</b><span>Принимаем поставки, объединяем, упаковываем и маркируем.</span></div>
+                <div><b>Konsolidierung</b><span>Wareneingang, Bündelung, Verpackung und Kennzeichnung.</span></div>
               </div>
               <div class="step">
                 <div class="badge">5</div>
-                <div><b>Комплаенс и экспорт</b><span>Проверка ограничений, оформление документов, организация доставки.</span></div>
+                <div><b>Export & Versand</b><span>Dokumente, Restriktionsprüfung und internationale Zustellung.</span></div>
               </div>
               <div class="step">
                 <div class="badge">6</div>
-                <div><b>Поддержка</b><span>Статусы, документы, подтверждения — по запросу клиента.</span></div>
+                <div><b>Support</b><span>Status, Dokumente und Nachweise — auf Anfrage.</span></div>
               </div>
             </div>
           </div>
@@ -537,128 +532,125 @@
       </div>
     </section>
 
-    <!-- Sectors -->
     <section id="sectors">
       <div class="wrap">
         <div class="section-head">
-          <h2>Направления</h2>
-          <p class="hint">Типовые категории MRO. Поставка выполняется по запросу клиента.</p>
+          <h2>Bereiche</h2>
+          <p class="hint">Typische MRO-Kategorien. Lieferung erfolgt auf Kundenanfrage.</p>
         </div>
 
         <div class="grid2">
           <div class="card pad feature">
-            <h3>Категории запчастей</h3>
+            <h3>Kategorien</h3>
             <ul class="list">
-              <li>гидравлика</li>
-              <li>пневматика</li>
-              <li>электрика и электрокомпоненты</li>
-              <li>промышленная автоматика</li>
-              <li>датчики и измерение</li>
-              <li>клапаны, арматура, фитинги</li>
+              <li>Hydraulik</li>
+              <li>Pneumatik</li>
+              <li>Elektrotechnik & Komponenten</li>
+              <li>Industrieautomation</li>
+              <li>Sensorik & Messtechnik</li>
+              <li>Ventile, Armaturen, Fittings</li>
             </ul>
           </div>
 
           <div class="card pad feature">
-            <h3>Кому особенно полезно</h3>
+            <h3>Typische Kunden</h3>
             <ul class="list">
-              <li>сервисным и ремонтным компаниям</li>
-              <li>MRO отделам на предприятиях</li>
-              <li>интеграторам и EPC</li>
-              <li>энергетике, добыче, производству</li>
-              <li>судоходству и офшору</li>
+              <li>Service- und Reparaturunternehmen</li>
+              <li>Instandhaltung (MRO) in Industrieanlagen</li>
+              <li>EPC & Systemintegratoren</li>
+              <li>Energie, Produktion, Rohstoffe</li>
+              <li>Marine / Offshore</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Compliance -->
     <section id="compliance">
       <div class="wrap">
         <div class="section-head">
-          <h2>Комплаенс и ответственная торговля</h2>
-          <p class="hint">Снижаем риски в цепочке поставок и соблюдаем требования регулирования.</p>
+          <h2>Compliance & verantwortungsvoller Handel</h2>
+          <p class="hint">Wir reduzieren Risiken in der Supply Chain und beachten regulatorische Vorgaben.</p>
         </div>
 
         <div class="grid3">
           <div class="card pad feature">
-            <h3>Экспортный контроль</h3>
-            <p>Проверка ограничений и требований экспортного контроля в рамках применимого законодательства.</p>
+            <h3>Exportkontrolle</h3>
+            <p>Prüfung von Restriktionen und Exportanforderungen im Rahmen des anwendbaren Rechts.</p>
           </div>
           <div class="card pad feature">
-            <h3>Санкционные требования</h3>
-            <p>Проверка контрагентов и конечного пользователя в пределах необходимых процедур.</p>
+            <h3>Sanktionsvorgaben</h3>
+            <p>Prüfung von Geschäftspartnern und End-User, soweit erforderlich.</p>
           </div>
           <div class="card pad feature">
-            <h3>Цепочка поставок</h3>
-            <p>Документы и подтверждения по запросу; серийные номера и соответствие — где применимо.</p>
+            <h3>Supply-Chain-Nachweise</h3>
+            <p>Dokumente und Bestätigungen auf Anfrage; Seriennummern & Konformität — wo anwendbar.</p>
           </div>
         </div>
 
         <div class="notice" style="margin-top:14px;">
-          Компания является независимым поставщиком услуг по закупке и консолидации промышленных запчастей. Сайт не является розничным каталогом и не публикует цены.
+          EcomStock GmbH ist ein unabhängiger Dienstleister für Beschaffung und Konsolidierung von Industrie-Ersatzteilen. Diese Website ist kein Retail-Katalog und veröffentlicht keine Preise.
         </div>
       </div>
     </section>
 
-    <!-- Contacts -->
     <section id="contacts">
       <div class="wrap">
         <div class="section-head">
-          <h2>Контакты и запрос предложения</h2>
-          <p class="hint">Отправьте список позиций — вернёмся с доступностью, сроками и логистическими опциями.</p>
+          <h2>Kontakt & Angebotsanfrage</h2>
+          <p class="hint">Senden Sie Ihre Teileliste — wir melden uns mit Verfügbarkeit, Lieferzeit und Versandoptionen.</p>
         </div>
 
         <div class="grid2">
-          <div class="card pad feature">
-            <h3>Чтобы мы ответили быстро</h3>
-            <ul class="list">
-              <li>артикулы / part numbers</li>
-              <li>количество</li>
-              <li>страна назначения</li>
-              <li>желаемый срок</li>
-              <li>фото шильдика (если есть)</li>
-            </ul>
+          <div class="card pad feature contact-card">
+            <h3>Kontaktdaten</h3>
+            <p><b>EcomStock GmbH</b></p>
+            <p>Potsdamer Str. 92<br/>10785 Berlin</p>
+            <p>Telefon: <a href="tel:+4915154240414">+49 1515 4240414</a></p>
+            <p>E-Mail: <a href="mailto:support@e-comstock.de">support@e-comstock.de</a></p>
+            <p style="margin-top:12px;"><b>USt-ID-Nr. / VAT</b>: DE283788999</p>
+            <p><b>Registernummer</b>: HRB 141947 B</p>
+
             <div class="notice" style="margin-top:14px;">
-              Форму ниже можно подключить к email/Telegram/CRM — скажи куда, дам готовый код.
+              Tipp: Für eine schnelle Bearbeitung bitte Artikelnummern, Mengen, Zielland und gewünschte Lieferzeit angeben.
             </div>
           </div>
 
           <div class="card pad feature">
-            <h3>Форма запроса</h3>
+            <h3>Formular</h3>
 
-            <!-- IMPORTANT:
-              Чтобы форма реально отправляла:
-              - поставь action на Formspree/Make/Zapier/свой backend
-              - сейчас action="#" — демо
-            -->
-            <form method="post" action="#">
+            <!-- GitHub Pages has no server-side mail. This uses FormSubmit to send to your mailbox. -->
+            <form method="post" action="https://formsubmit.co/support@e-comstock.de">
+              <!-- FormSubmit settings -->
+              <input type="hidden" name="_subject" value="Neue Anfrage über e-comstock.de" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <!-- Optional: after submit redirect (change to your real domain when ready) -->
+              <input type="hidden" name="_next" value="https://e-comstock.github.io/site/#contacts" />
+
               <div style="display:grid; gap:10px;">
                 <div>
-                  <label for="company">Компания</label>
-                  <input id="company" name="company" placeholder="Название компании" />
+                  <label for="company">Firma</label>
+                  <input id="company" name="Firma" placeholder="Firmenname" />
                 </div>
                 <div>
-                  <label for="name">Контактное лицо</label>
-                  <input id="name" name="name" placeholder="Имя и должность" />
+                  <label for="name">Ansprechpartner</label>
+                  <input id="name" name="Ansprechpartner" placeholder="Name und Position" />
                 </div>
                 <div>
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="name@company.com" required />
+                  <label for="email">E-Mail</label>
+                  <input id="email" name="E-Mail" type="email" placeholder="name@company.com" required />
                 </div>
                 <div>
-                  <label for="country">Страна</label>
-                  <input id="country" name="country" placeholder="Страна назначения" />
+                  <label for="country">Zielland</label>
+                  <input id="country" name="Zielland" placeholder="Land" />
                 </div>
                 <div>
-                  <label for="msg">Список запчастей / сообщение</label>
-                  <textarea id="msg" name="message" placeholder="Вставьте список позиций, артикулы, количество, комментарии" required></textarea>
+                  <label for="msg">Teileliste / Nachricht</label>
+                  <textarea id="msg" name="Nachricht" placeholder="Bitte Artikelnummern, Mengen und Kommentare einfügen" required></textarea>
                 </div>
 
-                <button class="btn primary" type="submit">Отправить запрос</button>
-                <p class="hint" style="margin:0;">
-                  Подключение отправки: Formspree/Make/Zapier/CRM. Сейчас форма в демо-режиме.
-                </p>
+                <button class="btn primary" type="submit">Anfrage absenden</button>
               </div>
             </form>
           </div>
@@ -679,21 +671,21 @@
           </div>
 
           <div class="smalllinks">
-            <a href="#services">Услуги</a>
-            <a href="#process">Процесс</a>
-            <a href="#compliance">Комплаенс</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#services">Leistungen</a>
+            <a href="#process">Ablauf</a>
+            <a href="#compliance">Compliance</a>
+            <a href="#contacts">Kontakt</a>
           </div>
 
           <p class="hint" style="margin-top:12px;">
-            © <span id="y"></span> EcomStock. All rights reserved.
+            © <span id="y"></span> EcomStock GmbH. Alle Rechte vorbehalten.
           </p>
         </div>
 
         <div class="notice">
-          Все товарные знаки и наименования производителей являются собственностью соответствующих правообладателей и используются исключительно в справочных целях.
-          Компания является независимым поставщиком услуг по закупке и консолидации промышленных запчастей и не является официальным дистрибьютором или дилером производителей,
-          если прямо не указано иное.
+          Alle Marken- und Produktnamen sowie Logos sind Eigentum der jeweiligen Rechteinhaber und dienen ausschließlich Identifikations-/Referenzzwecken.
+          EcomStock GmbH ist ein unabhängiger Dienstleister für Beschaffung und Konsolidierung von Industrie-Ersatzteilen und ist — sofern nicht ausdrücklich anders angegeben —
+          kein autorisierter Distributor, Händler oder Vertreter der genannten Hersteller.
         </div>
       </div>
     </div>
